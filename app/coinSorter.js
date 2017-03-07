@@ -20,11 +20,11 @@ function coinSorter(total, coins) {
       return;
     }
     let change = [coin].concat(restChange);
-    if (!bestChange || (change.length < bestChange.length)) {
+    if (!bestChange || (change.length <= bestChange.length)) {
       bestChange = change;
     }
   });
   return bestChange;
 }
 
-console.log(coinSorter(14, [10,7,1]));
+console.log(coinSorter(99, [7,1,10]));
