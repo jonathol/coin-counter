@@ -23,9 +23,8 @@ function coinSorter(total, coins) {
     if (!bestChange || (change.length < bestChange.length)) {
       bestChange = change;
     }
-
   });
   return bestChange;
 }
 
-console.log(coinSorter(99, [1,10,5,25]));
+console.log(coinSorter(14, [10,7,1]));
