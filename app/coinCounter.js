@@ -28,5 +28,6 @@ function coinCounter(total, coins) {
 }
 
 document.getElementById('make-change').addEventListener("click", function(){
-  console.log(coinCounter(18, [25,10,5,1]))
+  let total = document.getElementById('total').value;
+  console.log(coinCounter(total, [25,10,5,1]))
 });
