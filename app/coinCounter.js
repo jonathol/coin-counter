@@ -27,4 +27,6 @@ function coinCounter(total, coins) {
   return bestChange;
 }
 
-console.log(coinCounter(99, [7,1,10]));
+document.getElementById('make-change').addEventListener("click", function(){
+  console.log(coinCounter(18, [25,10,5,1]))
+});
