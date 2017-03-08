@@ -1,4 +1,4 @@
-function coinSorter(total, coins) {
+function coinCounter(total, coins) {
   if (total <= 0) {
     return [];
   }
@@ -15,7 +15,7 @@ function coinSorter(total, coins) {
       return;
     }
     let remainder = total - coin;
-    let restChange = coinSorter(remainder, coins.slice(index));
+    let restChange = coinCounter(remainder, coins.slice(index));
     if (!restChange) {
       return;
     }
@@ -27,4 +27,4 @@ function coinSorter(total, coins) {
   return bestChange;
 }
 
-console.log(coinSorter(99, [7,1,10]));
+console.log(coinCounter(99, [7,1,10]));
