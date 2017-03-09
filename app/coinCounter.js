@@ -41,12 +41,46 @@ function makeChange(target, coins) {
   return bestChange;
 }
 
+function setNotification(coins, count) {
+  coins.forEach( (el) => {
+    let val = parseInt(el.value);
+    let notification = el.parentNode.childNodes[1];
+    notification.innerHTML = count[val];
+
+    if (count[val] !== 0) {
+      notification.style.display = "inline";
+    } else {
+      notification.style.display = "none";
+    }
+
+  });
+}
 
 document.getElementById('make-change').addEventListener("click", function(){
-  let target = parseInt(document.getElementById('total').value);
-  let one = parseInt(document.getElementById('coin-one').value);
-  let two = parseInt(document.getElementById('coin-two').value);
-  let three = parseInt(document.getElementById('coin-three').value);
-  let four = parseInt(document.getElementById('coin-four').value);
-  console.log(makeChange(target, [one,two,three,four]))
+  let target = document.getElementById('total');
+  let one = document.getElementById('coin-one');
+  let two = document.getElementById('coin-two');
+  let three = document.getElementById('coin-three');
+  let four = document.getElementById('coin-four');
+
+  let coins = makeChange(parseInt(target.value), [
+    parseInt(one.value),
+    parseInt(two.value),
+    parseInt(three.value),
+    parseInt(four.value)
+  ]);
+
+  let count = {};
+  count[parseInt(one.value)] = 0;
+  count[parseInt(two.value)] = 0;
+  count[parseInt(three.value)] = 0;
+  count[parseInt(four.value)] = 0;
+
+  coins.forEach( (el) => {
+    count[el] += 1;
+  });
+
+  setNotification([one,two,three,four], count);
+
+
 });

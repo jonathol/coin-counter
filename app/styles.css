@@ -57,6 +57,7 @@ h1 {
   color: white;
   text-align: center;
   font-weight: bold;
+  display: none;
 }
 
 input[type=number]::-webkit-inner-spin-button,
