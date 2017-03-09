@@ -36,6 +36,26 @@ h1 {
   border: none;
   text-align: center;
   font: 24px;
+
+}
+
+.test {
+  position: relative;
+}
+
+
+
+.test > div{
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -61,7 +81,7 @@ input {
 }
 
 button {
-  
+
   width: 80%;
   height: 40px;
   color: white;
@@ -103,6 +123,14 @@ button:hover {
   button {
     margin: 0 0 15px 0;
 
+  }
+
+  .test > div {
+    top: 25px;
+    left: 25px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
   }
 
 }
