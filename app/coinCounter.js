@@ -27,7 +27,13 @@ function coinCounter(total, coins) {
   return bestChange;
 }
 
+
+
 document.getElementById('make-change').addEventListener("click", function(){
   let total = document.getElementById('total').value;
-  console.log(coinCounter(total, [25,10,5,1]))
+  let one = document.getElementById('coin-one').value;
+  let two = document.getElementById('coin-two').value;
+  let three = document.getElementById('coin-three').value;
+  let four = document.getElementById('coin-four').value;
+  console.log(coinCounter(total, [one,two,three,four]))
 });
